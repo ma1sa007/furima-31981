@@ -8,28 +8,26 @@
 | email    | string | null: false |
 | password | string | null: false |
 | profile  | text   | null: false |
-| occupation | text | null: false |
-| position | text   | null: false |
 
 ### Association
 
-- has_many :users
-- has_many :rooms, through: users
-- has_many :messages
+- has_one :users
+- has_one :rooms, through: users
+- has_one :messages
 
-##  comments テーブル
+##  items テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| text   | text   | null: false |
-| user   | references |
-| prototype   | references |
+| Column          | Type   | Options      |
+|  ------         | ------ | -----------  |
+| product name    |  text  |  null: false |
+| category        |  text  |  null: false |
+| seller          |  text  |  null: false |
 
 ### Association
 
-- has_many :room_users
-- has_many :users, through: room_users
-- has_many :messages
+- has_one :room_users
+- has_one :users, through: room_users
+- has_one :messages
 
 ## users テーブル
 
