@@ -6,42 +6,41 @@
 | -------- | ------ | ----------- |
 | name     | string | null: false |
 | email    | string | null: false |
-| password | string | null: false |
-| profile  | text   | null: false |
+| encrypted_password | string | null: false |
+| identification  | string | null: false |
+| birthday   | string | null: false |
 
 ### Association
 
-- has_one :users
-- has_one :rooms, through: users
-- has_one :messages
+- has_one :product
+- has_one :purchase information
 
 ##  items テーブル
 
-| Column          | Type   | Options      |
-|  ------         | ------ | -----------  |
-| product name    |  text  |  null: false |
-| category        |  text  |  null: false |
-| seller          |  text  |  null: false |
+| Column            | Type      | Options      |
+|  ------           | ------    | -----------  |
+| name              |  text     |  null: false |
+| category_id       |  integer  |  null: false |
+| seller            | references | null: false, foreign_key: true |
+| exhibition image       |  integer  |  null: false |
+| product description     |  integer  |  null: false |
+| product details     |  integer  |  null: false |
+| regarding delivery     |  integer  |  null: false |
+| selling price     |  integer  |  null: false |
+
 
 ### Association
 
-- has_one :room_users
-- has_one :users, through: room_users
-- has_one :messages
+- belongs_to :users
 
-## users テーブル
+##  items テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-|   title  | string| null: false |
-| catch_copy | text | null: false |
-| concept | text | null: false |
-| profile  | text   | null: false |
-| image | text | null: false |
-| user | refernces  |
+| Column                            | Type      | Options      |
+|  ------                           | ------    | -----------  |
+| confirmation of purchase details  | references | null: false, foreign_key: true |
+| credit card information input     | references | null: false, foreign_key: true |
+| enter delivery address            | references | null: false, foreign_key: true |
 
 ### Association
 
-
-- belongs_to :room
-- belongs_to :user
+- belongs_to :users
