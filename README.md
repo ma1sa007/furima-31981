@@ -43,12 +43,12 @@
 | Column                            | Type      | Options      |
 |  ------                           | ------    | -----------  |
 | postal_code                       |  string    |  null: false |
-| prefecture_id                     |  integer    | null: false, foreign_key: true |
+| shipping_area_id                 |  integer     |  null: false |
 | municipalities                    |  string     |  null: false |
 | address                           |  string     |  null: false |
-| building name                     |  integer    |  null: false |
-| phone number                      |  string     |  null: false |
-
+| building_name                     |  integer    |  null: false |
+| phone_number                      |  string     |  null: false |
+| purchase_infomation               | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :purchase_infomation
