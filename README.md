@@ -26,28 +26,29 @@
 | category_id              |  integer     |  null: false |
 | user                     | references   | null: false, foreign_key: true |
 | product_description      |  text        |  null: false |
-| product status_id        |  integer     |  null: false |
-| shipping fee burden_id   |  integer     |  null: false |
-| shipping area_id         |  integer     |  null: false |
-| days to ship_id          |  integer     |  null: false |
-| regarding delivery_id    |  integer     |  null: false |
-| selling price_id         |  integer     |  null: false |
+| product_status_id        |  integer     |  null: false |
+| shipping_fee_burden_id   |  integer     |  null: false |
+| shipping_area_id         |  integer     |  null: false |
+| days_to_ship_id          |  integer     |  null: false |
+| regarding_delivery_id    |  integer     |  null: false |
+| selling_price            |  integer     |  null: false |
 
 
 ### Association
 
-- belongs_to :user
+- belongs_to :item
+- belongs_to :purchase infomations
 
 ##  addresses テーブル
 
 | Column                            | Type      | Options      |
 |  ------                           | ------    | -----------  |
-| postal code_id                    |  integer     |  null: false |
-| prefectures_id                    |  integer     |  null: false |
-| municipalities_id                 |  integer     |  null: false |
-| address_id                        |  integer     |  null: false |
-| building name_id                  |  integer     |  null: false |
-| phone number_id                   |  integer     |  null: false |
+| postal_code                       |  string    |  null: false |
+| prefectures_id                    |  integer    |  null: false |
+| municipalities                    |  string     |  null: false |
+| address                           |  string     |  null: false |
+| building name                     |  string      |  null: false |
+| phone number                      |  string     |  null: false |
 
 ### Association
 
@@ -60,11 +61,8 @@
 |  ------                          | ------    | -----------  |
 | user                             | references | null: false, foreign_key: true |
 | item                             | references | null: false, foreign_key: true |
-| confirmation of purchase details | references | null: false, foreign_key: true |
-| credit card information input    | references | null: false, foreign_key: true |
-| enter delivery address           | references | null: false, foreign_key: true |
-
 ### Association
 
 - belongs_to :user
-- belongs_to :items
+- belongs_to :item
+- belongs_to :addresses
