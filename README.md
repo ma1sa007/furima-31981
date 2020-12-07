@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :purchase_information
+- has_many :purchase_informations
 
 ##  items テーブル
 
@@ -26,11 +26,11 @@
 | category_id              |  integer     |  null: false |
 | user                     | references   | null: false, foreign_key: true |
 | product_description      |  text        |  null: false |
-| product_status_id        |  integer     |  null: false |
-| shipping_fee_burden_id   |  integer     |  null: false |
-| shipping_area_id         |  integer     |  null: false |
-| days_to_ship_id          |  integer     |  null: false |
-| regarding_delivery_id    |  integer     |  null: false |
+| product_status        |  integer     |  null: false |
+| shipping_fee_burden  |  integer     |  null: false |
+| shipping_area        |  integer     |  null: false |
+| days_to_ship         |  integer     |  null: false |
+| regarding_delivery    |  integer     |  null: false |
 | selling_price            |  integer     |  null: false |
 
 
@@ -46,7 +46,7 @@
 | shipping_area_id                 |  integer     |  null: false |
 | municipalities                    |  string     |  null: false |
 | address                           |  string     |  null: false |
-| building_name                     |  integer    |  null: false |
+| building_name                     |  string    |  null: false |
 | phone_number                      |  string     |  null: false |
 | purchase_infomation               | references | null: false, foreign_key: true |
 ### Association
