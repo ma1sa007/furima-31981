@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :item
-- belongs_to :purchase infomations
+- has_one :purchase_infomation
 
 ##  addresses テーブル
 
@@ -47,7 +47,7 @@
 | prefectures_id                    |  integer    |  null: false |
 | municipalities                    |  string     |  null: false |
 | address                           |  string     |  null: false |
-| building name                     |  integer      |  null: false |
+| building name                     |  integer    |  null: false |
 | phone number                      |  string     |  null: false |
 
 ### Association
@@ -65,4 +65,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :addresses
+- has_one :address
