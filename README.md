@@ -26,10 +26,10 @@
 | category_id              |  integer     |  null: false |
 | user                     | references   | null: false, foreign_key: true |
 | product_description      |  text        |  null: false |
-| product_status        |  integer     |  null: false |
-| shipping_fee_burden  |  integer     |  null: false |
-| shipping_area        |  integer     |  null: false |
-| days_to_ship         |  integer     |  null: false |
+
+| shipping_charges_id  |  integer     |  null: false |
+| shipping_area_id      |  integer     |  null: false |
+| days_to_ship_id        |  integer     |  null: false |
 | regarding_delivery    |  integer     |  null: false |
 | selling_price            |  integer     |  null: false |
 
