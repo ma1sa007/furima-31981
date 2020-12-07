@@ -36,7 +36,6 @@
 
 ### Association
 
-- belongs_to :item
 - has_one :purchase_infomation
 
 ##  addresses テーブル
@@ -52,7 +51,6 @@
 
 ### Association
 
-- belongs_to :user
 
 
 #  purchase infomations テーブル
