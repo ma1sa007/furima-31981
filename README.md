@@ -35,7 +35,7 @@
 
 
 ### Association
-
+- belongs_to :user
 - has_one :purchase_infomation
 
 ##  addresses テーブル
@@ -43,7 +43,7 @@
 | Column                            | Type      | Options      |
 |  ------                           | ------    | -----------  |
 | postal_code                       |  string    |  null: false |
-| prefectures_id                    |  integer    |  null: false |
+| prefecture_id                     |  integer    | null: false, foreign_key: true |
 | municipalities                    |  string     |  null: false |
 | address                           |  string     |  null: false |
 | building name                     |  integer    |  null: false |
@@ -51,7 +51,7 @@
 
 ### Association
 
-
+- belongs_to :purchase infomation
 
 #  purchase infomations テーブル
 
