@@ -47,7 +47,7 @@
 | prefectures_id                    |  integer    |  null: false |
 | municipalities                    |  string     |  null: false |
 | address                           |  string     |  null: false |
-| building name                     |  string      |  null: false |
+| building name                     |  integer      |  null: false |
 | phone number                      |  string     |  null: false |
 
 ### Association
