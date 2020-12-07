@@ -16,13 +16,13 @@
 ### Association
 
 - has_many :items
-- has_many :purchase_informations
+- has_many :purchase_information
 
 ##  items テーブル
 
 | Column                   | Type         | Options      |
 |  ------                  | ------       | -----------  |
-| name                     |  text        |  null: false |
+| name                     |  string        |  null: false |
 | category_id              |  integer     |  null: false |
 | user                     | references   | null: false, foreign_key: true |
 | product_description      |  text        |  null: false |
@@ -51,9 +51,9 @@
 
 ### Association
 
-- belongs_to :purchase infomation
+- belongs_to :purchase_infomation
 
-#  purchase infomations テーブル
+#  purchase_infomation テーブル
 
 | Column                           | Type      | Options      |
 |  ------                          | ------    | -----------  |
