@@ -7,7 +7,6 @@ RSpec.describe User, type: :model  do
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
       it " first_nameとlast_name、first_name_kanaとlast_name_kana,passwordとpassword_confirmation,email,birthdayが存在すれば登録できる" do
-        expect(@user).to be_valid
         @user.password = "0000aa"
         @user.password_confirmation = "0000aa"
         expect(@user).to be_valid
@@ -70,6 +69,55 @@ RSpec.describe User, type: :model  do
           @user.valid?
           expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
         end
+
+        it "ユーザー本名は、名字がそれぞれ必須であること" do
+          @user.first_name =""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("First name can't be blank")
+        end
+
+        it "ユーザー本名は、名前がそれぞれ必須であること" do
+          @user.last_name =""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Last name can't be blank")
+        end
+
+        it "ユーザー本名は、全角（漢字・ひらがな・カタカナ）での入力が必須であること" do
+          @user.first_name, last_name = ""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("First name can't be blank")
+        end
+
+        it "ユーザー本名のフリガナは、名字とでそれぞれ必須であること" do
+          @user.first_name_kana = ("")
+          @user.valid?
+          expect(@user.errors.full_messages).to include("First name kana can't be blank")
+        end
+
+        it "ユーザー本名のフリガナは、名前で必須であること" do
+          @user.last_name_kana = ("")
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Last name kana can't be blank")
+        end
+
+
+        it "ユーザー本名のフリガナは、全角（カタカナ）での入力が必須であること" do
+          @user.first_name_kana = ""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("First name kana can't be blank")
+        end
+
+        it "ユーザー本名のフリガナは、全角（カタカナ）での入力が必須であること" do
+          @user.last_name_kana = ""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Last name kana can't be blank")
+        end
+
+        it "生年月日が必須であること" do
+          @user. birthday = ""
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Birthday can't be blank")
+        end
       end
-  end
+   end
 end
