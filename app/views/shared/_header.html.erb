@@ -16,10 +16,6 @@
     </ul>
     <ul class='lists-right'>
         <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
                 <%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %> 
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> 
               </li>
