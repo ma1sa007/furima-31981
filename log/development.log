@@ -16431,3 +16431,48 @@ Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 253
   [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'corrin@hotmail.com' LIMIT 1[0m
   [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO `users` (`first_name`, `last_name`, `first_name_kana`, `last_name_kana`, `nickname`, `email`, `encrypted_password`, `birthday`, `created_at`, `updated_at`) VALUES ('齊木', '雅也', 'サイキ', 'マサヤ', 'veronique.ritchie', 'corrin@hotmail.com', '$2a$12$L3T7r8/Al/NUQOuTRW.eguBOOg4G1U8wGeSxMxcuoiHTWI48eeQ2S', '2020-12-08', '2020-12-09 02:50:17.361508', '2020-12-09 02:50:17.361508')[0m
   [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-12-09 16:02:30 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1360.8ms | Allocations: 1474900)
+  Rendered shared/_footer.html.erb (Duration: 2.0ms | Allocations: 1515)
+  Rendered items/index.html.erb within layouts/application (Duration: 1372.8ms | Allocations: 1484339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1443ms (Views: 1431.9ms | ActiveRecord: 0.0ms | Allocations: 1505491)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-12-09 16:02:53 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 4.9ms | Allocations: 805)
+  Rendered shared/_second-footer.html.erb (Duration: 0.8ms | Allocations: 442)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 254.9ms | Allocations: 203467)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 299ms (Views: 276.7ms | ActiveRecord: 6.8ms | Allocations: 231570)
+
+
+Started POST "/users" for ::1 at 2020-12-09 16:05:18 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"IUKdcqTg0EvGO6Kb+K9Dfo4Qbukxr9noWO+/KnRhqASlQTp9U3babi+o1kphgR+HYbL3kioNe2BsWVj7yE1Uig==", "user"=>{"nickname"=>"太郎", "email"=>"aaa@aaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "first_name"=>"山田", "last_name"=>"隆太郎", "first_name_kana"=>"ヤマダ", "last_name_kana"=>"リクタロウ", "birthday(1i)"=>"1931", "birthday(2i)"=>"12", "birthday(3i)"=>"1"}, "commit"=>"会員登録"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'aaa@aaa' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO `users` (`first_name`, `last_name`, `first_name_kana`, `last_name_kana`, `nickname`, `email`, `encrypted_password`, `birthday`, `created_at`, `updated_at`) VALUES ('山田', '隆太郎', 'ヤマダ', 'リクタロウ', '太郎', 'aaa@aaa', '$2a$12$q9Q.QIss4P788DqSEZrQ4.1ynYAKVr1b7P2Ykp7Ew8r6jbxVt8Wv.', '1931-12-01', '2020-12-09 07:05:18.301384', '2020-12-09 07:05:18.301384')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 238ms (ActiveRecord: 6.5ms | Allocations: 10457)
+
+
+Started GET "/" for ::1 at 2020-12-09 16:05:18 +0900
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 7.9ms | Allocations: 2397)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 1080)
+  Rendered items/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 9707)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 4.4ms | Allocations: 26390)
+
+
