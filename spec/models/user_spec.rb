@@ -95,13 +95,13 @@ RSpec.describe User, type: :model  do
 
 
         it "ユーザー本名の名字のフリガナは、全角（カタカナ）での入力が必須であること" do
-          @user.first_name_kana = "jjj"
+          @user.first_name_kana = ("jjj")
           @user.valid?
           expect(@user.errors.full_messages).to include("First name kana 全角文字を使用してください")
         end
 
         it "ユーザー本名の名前のフリガナは、全角（カタカナ）での入力が必須であること" do
-          @user.last_name_kana = "jjj"
+          @user.last_name_kana = ("jjj")
           @user.valid?
           expect(@user.errors.full_messages).to include("Last name kana 全角文字を使用してください")
         end
