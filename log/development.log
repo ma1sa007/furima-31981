@@ -17336,3 +17336,30 @@ Processing by Devise::RegistrationsController#create as HTML
 Completed 200 OK in 60ms (Views: 47.5ms | ActiveRecord: 0.0ms | Allocations: 27506)
 
 
+Started POST "/users" for ::1 at 2020-12-10 11:33:40 +0900
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"+CRcgU68XeNya1mNcazjdiyfx3vJMOuqJs8GwUt3AbXKvRpx0bN/wXyAigCVKGE2GaizqinlEuIb231bdyG7nQ==", "user"=>{"nickname"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "first_name"=>"", "last_name"=>"", "first_name_kana"=>"", "last_name_kana"=>"", "birthday(1i)"=>"", "birthday(2i)"=>"", "birthday(3i)"=>""}, "commit"=>"会員登録"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 1176.3ms | Allocations: 1473858)
+  Rendered shared/_error_messages.html.erb (Duration: 3.3ms | Allocations: 2100)
+  Rendered shared/_second-footer.html.erb (Duration: 1.3ms | Allocations: 435)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1197.4ms | Allocations: 1481014)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1572ms (Views: 1264.5ms | ActiveRecord: 9.0ms | Allocations: 1717113)
+
+
+Started POST "/users" for ::1 at 2020-12-10 11:48:08 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"+CRcgU68XeNya1mNcazjdiyfx3vJMOuqJs8GwUt3AbXKvRpx0bN/wXyAigCVKGE2GaizqinlEuIb231bdyG7nQ==", "user"=>{"nickname"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "first_name"=>"", "last_name"=>"", "first_name_kana"=>"", "last_name_kana"=>"", "birthday(1i)"=>"", "birthday(2i)"=>"", "birthday(3i)"=>""}, "commit"=>"会員登録"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 3.8ms | Allocations: 800)
+  Rendered shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 2080)
+  Rendered shared/_second-footer.html.erb (Duration: 1.1ms | Allocations: 429)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 7200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 249ms (Views: 52.5ms | ActiveRecord: 0.0ms | Allocations: 31362)
+
+
