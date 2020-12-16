@@ -26,7 +26,7 @@ RSpec.describe Item, type: :model  do
         end
 
         it "商品の説明が必須であること" do
-          @item.product_description  =nil
+          @item.product_description_id  =nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Product description can't be blank")
         end

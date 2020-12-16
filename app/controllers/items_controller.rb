@@ -1,10 +1,5 @@
 class ItemsController < ApplicationController
-#itemのマイグレーションファイルを作って、そのあと rails db:migrateで反映させる
-#商品出品画面に遷移するようにindex.html.erbに記述しているulrを設定する
-#newアクション内に@item = Itme.newでインスタンスを作成する
-#new.html.erbのfrom_withにモデルを設定する
-#new.html.erbのhogeを修正する
-#createアクション内で保存出来るようにする
+  before_action :authenticate_user!, only: [:new, :create]
     
     def index
          @items = Item.all.order("created_at DESC")
@@ -27,6 +22,6 @@ class ItemsController < ApplicationController
       private
     
       def item_params
-        params.require(:item).permit(:image, :product_name, :product_description, :category_id,:product_condition_id, :selling_price, :shipping_charge_id, :shipping_area_id, :days_to_ship_id).merge(user_id: current_user.id)
+        params.require(:item).permit(:image, :product_name, :product_description_id , :category_id,:product_condition_id, :selling_price, :shipping_charge_id, :shipping_area_id, :days_to_ship_id).merge(user_id: current_user.id)
       end
 end
