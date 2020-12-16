@@ -15,11 +15,14 @@ class Item < ApplicationRecord
     validates :image
     validates :product_name
     validates :product_description
-    validates :category_id, numericality: { other_than: 1 } 
-    validates :days_to_ship_id, numericality: { other_than: 1 } 
-    validates :product_condition_id, numericality: { other_than: 1 } 
-    validates :shipping_area_id, numericality: { other_than: 1 } 
-    validates :shipping_charge_id, numericality: { other_than: 1 } 
+
+    with_options ormat:{ numericality: other_than: 1   } do
+    validates :category_id
+    validates :days_to_ship_id
+    validates :product_condition_id
+    validates :shipping_area_id
+    validates :shipping_charge_id
+
     validates :selling_price, numericality: { greater_than_or_equal_to: 300,less_than_or_equal_to: 9999999 }
   end
 

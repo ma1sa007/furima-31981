@@ -114,6 +114,17 @@ RSpec.describe Item, type: :model  do
           expect(@item.errors.full_messages).to include("Selling price is not a number")
         end
 
+        it "半角英数混合では登録できないこと" do
+          @item.selling_price ="１２３ａａａ"
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Selling price is not a number")
+        end
+        it "半角英語だけでは登録できないこと" do
+          @item.selling_price ="ａａａ"
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Selling price is not a number")
+        end
+
         # it "入力された販売価格によって、販売手数料や販売利益の表示が変わること" do
         #   @item.price ="123456789"
         #   @user.valid?
