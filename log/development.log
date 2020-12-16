@@ -23216,3 +23216,89 @@ FOREIGN KEY (`user_id`)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('1293319920046035840')[0m
   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2020-12-16 16:53:32 +0900
+  [1m[35m (8.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2040)
+
+
+  
+SyntaxError (/Users/saikimasaya/projects/furima-31981/app/models/item.rb:19: syntax error, unexpected tLABEL
+...mat:{ numericality: other_than: 1   } do
+...                    ^~~~~~~~~~~
+/Users/saikimasaya/projects/furima-31981/app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 16:56:36 +0900
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2040)
+
+
+  
+SyntaxError (/Users/saikimasaya/projects/furima-31981/app/models/item.rb:19: syntax error, unexpected tLABEL
+...mat:{ numericality: other_than: 1 } do
+...                    ^~~~~~~~~~~
+/Users/saikimasaya/projects/furima-31981/app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 16:56:39 +0900
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1135)
+
+
+  
+SyntaxError (/Users/saikimasaya/projects/furima-31981/app/models/item.rb:19: syntax error, unexpected tLABEL
+...mat:{ numericality: other_than: 1 } do
+...                    ^~~~~~~~~~~
+/Users/saikimasaya/projects/furima-31981/app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input):
+  
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/models/item.rb:19: syntax error, unexpected tLABEL
+app/models/item.rb:32: syntax error, unexpected end, expecting end-of-input
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 17:02:03 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2036)
+
+
+  
+SyntaxError (/Users/saikimasaya/projects/furima-31981/app/models/item.rb:32: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/item.rb:32: syntax error, unexpected end-of-input, expecting end
+app/models/item.rb:32: syntax error, unexpected end-of-input, expecting end
+app/models/item.rb:32: syntax error, unexpected end-of-input, expecting end
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 17:03:15 +0900
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1646.2ms | Allocations: 1476495)
+  [1m[36mItem Load (5.1ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 1.7ms | Allocations: 1515)
+  Rendered items/index.html.erb within layouts/application (Duration: 1668.3ms | Allocations: 1486728)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1757ms (Views: 1710.7ms | ActiveRecord: 6.8ms | Allocations: 1515306)
+
+

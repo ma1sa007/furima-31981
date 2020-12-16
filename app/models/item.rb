@@ -15,8 +15,9 @@ class Item < ApplicationRecord
     validates :image
     validates :product_name
     validates :product_description
+  end
 
-    with_options ormat:{ numericality: other_than: 1   } do
+    with_options numericality: { other_than: 1 }  do
     validates :category_id
     validates :days_to_ship_id
     validates :product_condition_id
