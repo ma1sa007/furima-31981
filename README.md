@@ -25,11 +25,11 @@
 | name                     |  string      |  null: false |
 | category_id              |  integer     |  null: false |
 | user                     | references   | null: false, foreign_key: true |
-| product_description      |  text        |  null: false |
+| product_condition        |  text        |  null: false |
 | shipping_charges_id      |  integer     |  null: false |
 | shipping_area_id         |  integer     |  null: false |
 | days_to_ship_id          |  integer     |  null: false |
-| regarding_delivery       |  integer     |  null: false |
+| regarding_delivery_id    |  integer     |  null: false |
 | selling_price            |  integer     |  null: false |
 
 
