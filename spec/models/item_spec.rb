@@ -26,7 +26,7 @@ RSpec.describe Item, type: :model  do
         end
 
         it "商品の説明が必須であること" do
-          @item.product_description_id  =nil
+          @item.product_description =nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Product description can't be blank")
         end
@@ -43,22 +43,52 @@ RSpec.describe Item, type: :model  do
         end
 
         it " 配送料の負担についての情報が必須であること" do
-          @item.shipping_charge_id =1
+          @item.shipping_charge_id =nil
           @item.valid?
-          expect(@item.errors.full_messages).to include("Shipping charge must be other than 1")
+          expect(@item.errors.full_messages).to include("Shipping charge can't be blank")
         end
 
         it "発送元の地域についての情報が必須であること" do
-          @item.shipping_area_id =""
+          @item.shipping_area_id =nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Shipping area can't be blank")
         end
 
         it "発送までの日数についての情報が必須であること" do
-          @item.days_to_ship_id=""
+          @item.days_to_ship_id=nil
           @item.valid?
           expect(@item.errors.full_messages).to include("Days to ship can't be blank")
         end
+
+        it "カテゴリーの情報が１以外であること" do
+          @item.category_id = 1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Category must be other than 1")
+        end
+        it "商品の状態についての情報が１以外であること" do
+          @item.product_condition_id =1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Product condition must be other than 1")
+        end
+
+        it " 配送料の負担についての情報が１以外あること" do
+          @item.shipping_charge_id =1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Shipping charge must be other than 1")
+        end
+
+        it "発送元の地域についての情報が１以外であること" do
+          @item.shipping_area_id =1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Shipping area must be other than 1")
+        end
+
+        it "発送までの日数についての情報が１以外であること" do
+          @item.days_to_ship_id=1
+          @item.valid?
+          expect(@item.errors.full_messages).to include("Days to ship must be other than 1")
+        end
+
 
         it "価格についての情報が必須であること" do
           @item.selling_price =""
