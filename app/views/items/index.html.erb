@@ -135,19 +135,18 @@
 
           <%# 商品が売れていればsold outを表示しましょう %>
 
-          <%# <div class='sold-out'>
+          <%# <% <div class='sold-out'>
             <span>Sold Out!!</span>
-          </div> %>
+          </div> %> 
           <%# //商品が売れていればsold outを表示しましょう %>
 
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "商品名" %>
             <%= item.product_name %>
           </h3>
           <div class='item-price'>
-            <span><%= item.product_name %>円<br><%= item.shipping_charge.fee %></span>
+            <span><%= item.selling_price %>円<br><%= item.shipping_charge.fee %></span>
             
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
