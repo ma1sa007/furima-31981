@@ -23302,3 +23302,243 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 1757ms (Views: 1710.7ms | ActiveRecord: 6.8ms | Allocations: 1515306)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2020-12-16 18:38:57 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x4hg0hnjAL1D3l8+xudWWH94IsmBiGxJfxkF08WbzgVMr6DA8Ch1MKI2r9w0q9wVORgyGTuQpQmNSHnsLZh8ZA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 271ms (ActiveRecord: 4.3ms | Allocations: 211513)
+
+
+Started GET "/" for ::1 at 2020-12-16 18:38:57 +0900
+Processing by ItemsController#index as HTML
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 22.9ms | Allocations: 10119)
+
+
+  
+NoMethodError (undefined method `find_by_DESC' for #<Class:0x00007fd18b87c878>
+Did you mean?  find_by):
+  
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 18:42:29 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+Completed 404 Not Found in 19ms (ActiveRecord: 3.9ms | Allocations: 6535)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Item without an ID):
+  
+app/controllers/items_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2020-12-16 18:43:31 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1420.0ms | Allocations: 1476720)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  Rendered shared/_footer.html.erb (Duration: 3.5ms | Allocations: 1515)
+  Rendered items/index.html.erb within layouts/application (Duration: 1505.6ms | Allocations: 1517532)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1566ms (Views: 1536.0ms | ActiveRecord: 14.2ms | Allocations: 1545634)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78ccb7556a15e75d42281e46283620ade4642c32/mono_main.png" for ::1 at 2020-12-16 18:43:33 +0900
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1cef0490470a54987057add5637668a9e2443b60/295.jpg" for ::1 at 2020-12-16 18:43:33 +0900
+Processing by ActiveStorage::BlobsController#show as JPEG
+  [1m[35m (49.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1cef0490470a54987057add5637668a9e2443b60", "filename"=>"295"}
+Processing by ActiveStorage::BlobsController#show as PNG
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78ccb7556a15e75d42281e46283620ade4642c32", "filename"=>"mono_main"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+[36m  Disk Storage (267.5ms) [0m[34mGenerated URL for file at key: eiknupgp58jfqv0pnd51s03ixrmm (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg
+[36m  Disk Storage (132.0ms) [0m[34mGenerated URL for file at key: mni8cz9kpwggp6jeuqfisirur5jk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png)[0m
+Completed 302 Found in 352ms (ActiveRecord: 2.0ms | Allocations: 398746)
+
+
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png
+Completed 302 Found in 347ms (ActiveRecord: 0.2ms | Allocations: 396373)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg" for ::1 at 2020-12-16 18:43:34 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png" for ::1 at 2020-12-16 18:43:34 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"mono_main.png\"; filename*=UTF-8''mono_main.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798", "filename"=>"mono_main"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"295.jpg\"; filename*=UTF-8''295.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d", "filename"=>"295"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 3150)
+
+
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms | Allocations: 2823)
+
+
+Started GET "/" for ::1 at 2020-12-16 18:44:58 +0900
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 4.6ms | Allocations: 1756)
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  Rendered shared/_footer.html.erb (Duration: 2.4ms | Allocations: 1486)
+  Rendered items/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 15606)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 81.3ms | ActiveRecord: 2.7ms | Allocations: 35196)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png" for ::1 at 2020-12-16 18:44:58 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg" for ::1 at 2020-12-16 18:44:58 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"295.jpg\"; filename*=UTF-8''295.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozMy45NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--e1093b88e6113215ebe12539ce4fa9570eb1831d", "filename"=>"295"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"mono_main.png\"; filename*=UTF-8''mono_main.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo0ODozNC4wNTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--bff8aad0dc50e271531009bc92622c291ffe0798", "filename"=>"mono_main"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 367)
+
+
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 369)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-16 18:49:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_second-header.html.erb (Duration: 2.6ms | Allocations: 805)
+  Rendered shared/_second-footer.html.erb (Duration: 0.9ms | Allocations: 434)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2615)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 42.2ms | ActiveRecord: 5.4ms | Allocations: 32306)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-12-16 18:50:02 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"mqTnd8PDrSI2WeUx/xqD24NKcsNagrjkoyndPJfyhzQQ3mpkzJLt0MrnYfyCGpwabocJX/oW/WyHE7kZbd+k1w==", "user"=>{"email"=>"sa@sa.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sa@sa.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 230ms (ActiveRecord: 0.4ms | Allocations: 5009)
+
+
+Started GET "/" for ::1 at 2020-12-16 18:50:02 +0900
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/shared/_header.html.erb:18
+  Rendered shared/_header.html.erb (Duration: 3.0ms | Allocations: 2318)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 1080)
+  Rendered items/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 14190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 1.5ms | Allocations: 32766)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78ccb7556a15e75d42281e46283620ade4642c32/mono_main.png" for ::1 at 2020-12-16 18:50:02 +0900
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1cef0490470a54987057add5637668a9e2443b60/295.jpg" for ::1 at 2020-12-16 18:50:02 +0900
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--78ccb7556a15e75d42281e46283620ade4642c32", "filename"=>"mono_main"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1cef0490470a54987057add5637668a9e2443b60", "filename"=>"295"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: mni8cz9kpwggp6jeuqfisirur5jk (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png)[0m
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: eiknupgp58jfqv0pnd51s03ixrmm (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg)[0m
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms | Allocations: 3794)
+
+
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 3875)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png" for ::1 at 2020-12-16 18:50:02 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg" for ::1 at 2020-12-16 18:50:02 +0900
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"mono_main.png\"; filename*=UTF-8''mono_main.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02", "filename"=>"mono_main"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"295.jpg\"; filename*=UTF-8''295.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e", "filename"=>"295"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 792)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 472)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-12-16 18:53:09 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MgN+ChyPbA1eqEg3jO5QhY6Z+uI1P4b8A1zJ6pB6c/mNN0wW/wzD+HLvvPPlTnNPATWMF7kjfwOxjQKORQfUdw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.4ms | Allocations: 4824)
+
+
+Started GET "/" for ::1 at 2020-12-16 18:53:09 +0900
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 3.0ms | Allocations: 1410)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 12 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Item' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 11 LIMIT 1[0m
+  ↳ app/views/items/index.html.erb:134
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 1080)
+  Rendered items/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 13276)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 61.2ms | ActiveRecord: 1.5ms | Allocations: 31838)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e/295.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22295.jpg%22%3B+filename%2A%3DUTF-8%27%27295.jpg" for ::1 at 2020-12-16 18:53:09 +0900
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02/mono_main.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22mono_main.png%22%3B+filename%2A%3DUTF-8%27%27mono_main.png" for ::1 at 2020-12-16 18:53:09 +0900
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"295.jpg\"; filename*=UTF-8''295.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhaV2xyYm5Wd1ozQTFPR3BtY1hZd2NHNWtOVEZ6TUROcGVISnRiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJNU5TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSnpJNU5TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a66a9ff6cbacae9c873035bd2513a9b364e6128e", "filename"=>"295"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"mono_main.png\"; filename*=UTF-8''mono_main.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhiVzVwT0dONk9XdHdkMmRuY0RacVpYVnhabWx6YVhKMWNqVnFhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xdmJtOWZiV0ZwYmk1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMjF2Ym05ZmJXRnBiaTV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0xMi0xNlQwOTo1NTowMi42NDNaIiwicHVyIjoiYmxvYl9rZXkifX0=--9e4531c438285a60673bea0fb9648b282a316b02", "filename"=>"mono_main"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/" for ::1 at 2020-12-16 19:16:36 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered shared/_header.html.erb (Duration: 1575.1ms | Allocations: 1475270)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT `items`.* FROM `items` ORDER BY created_at DESC[0m
+  ↳ app/views/items/index.html.erb:130
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 1515)
+  Rendered items/index.html.erb within layouts/application (Duration: 1590.3ms | Allocations: 1485484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1655ms (Views: 1634.5ms | ActiveRecord: 3.0ms | Allocations: 1513638)
+
+
