@@ -31,13 +31,14 @@ class ItemsController < ApplicationController
       end
     
       def update
-        item = Item.find(params[:id])
-        item.update(item_params)
-        redirect_to item_path
+        @item = Item.find(params[:id])
+        if current_user != @item.user
+         redirect_to item_path
+        end
       end
 
       def destroy
-        item = Item.find(params[:id])
+        @item = Item.find(params[:id])
         if current_user != @item.user
          redirect_to root_path
       end
