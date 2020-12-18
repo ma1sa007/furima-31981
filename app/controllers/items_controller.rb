@@ -31,10 +31,15 @@ class ItemsController < ApplicationController
       end
     
       def update
-        # binding.pry
         item = Item.find(params[:id])
         item.update(item_params)
         redirect_to item_path
+      end
+
+      def destroy
+        item = Item.find(params[:id])
+        item.destroy
+        redirect_to root_path
       end
     
       private
