@@ -33,13 +33,16 @@ class ItemsController < ApplicationController
         if current_user != @item.user
          redirect_to item_path
         end
+          @item.update
+         redirect_to root_path
       end
 
       def destroy
         if current_user != @item.user
+          redirect_to root_path
+        end
           @item.destroy
          redirect_to root_path
-       end
      end
     
       private
