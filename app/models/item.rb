@@ -28,6 +28,7 @@ class Item < ApplicationRecord
   end
 
   has_one :order
+  has_one :purchase_information
   belongs_to :user
   #ジャンルの選択が「--」の時は保存できないようにする
 end

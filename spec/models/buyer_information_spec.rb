@@ -60,7 +60,7 @@ describe '商品の購入登録' do
         end
 
        it "電話番号にはハイフンは不要で、11桁以内であること（09012345678となる）" do
-        @buyer_information.phone_number = nil
+        @buyer_information.phone_number = 123123123123
         @buyer_information.valid?
         expect(@buyer_information.errors.full_messages).to include("Phone number can't be blank")
         end

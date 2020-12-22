@@ -3,6 +3,17 @@ class BuyerInformationsController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
+
+    if current_user.id == @item.user_id
+      redirect_to root_path
+    end
+    if @item.purchase_information.present?
+      redirect_to root_path
+    end
+
     @item_buyer = BuyerInformation.new
   end
 
@@ -16,14 +27,6 @@ class BuyerInformationsController < ApplicationController
         else
           render :index
         end
-    # @order = Order.new(order_params)
-    #      if @order.valid?
-    #        pay_item
-    #        @order.save
-    #      return redirect_to root_path
-    #    else
-    #     render 'index'
-    #    end
   end
 
   private
@@ -41,7 +44,7 @@ def order_params
 end
 
 def pay_item
-  Payjp.api_key = "sk_test_4aceb86af110765ae3a8fb31"  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+  Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
   Payjp::Charge.create(
     amount:@item.selling_price,  # 商品の値段
     card: order_params[:token],    # カードトークン
