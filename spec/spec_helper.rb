@@ -17,6 +17,9 @@
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
+  config.before(:each) do
+    allow(ActiveJob::Base).to receive(:perform_later).and_return(true)
+  end
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
   config.expect_with :rspec do |expectations|
