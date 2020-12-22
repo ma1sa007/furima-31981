@@ -62,6 +62,7 @@ gem 'image_processing', '~> 1.2'
 
 gem "pry-rails"
 gem 'active_hash'
+gem 'payjp'
 group :development do
   gem 'rubocop', require: false
 end
