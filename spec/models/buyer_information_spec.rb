@@ -13,6 +13,10 @@ describe '商品の購入登録' do
     it " postal_code,shipping_area_id,municipalities,address,building_name,phone_number,purchase_informationが存在すれば登録できる" do
       expect(@buyer_information).to be_valid
     end
+    it " postal_code,shipping_area_id,municipalities,address,building_name,phone_number,purchase_informationが存在すれば登録できる" do
+      @buyer_information.building_name =""
+      expect(@buyer_information).to be_valid
+    end
   end
 
   context '商品の購入登録がうまくいかないとき' do
@@ -62,10 +66,16 @@ describe '商品の購入登録' do
        it "電話番号にはハイフンは不要で、11桁以内であること（09012345678となる）" do
         @buyer_information.phone_number = 123123123123
         @buyer_information.valid?
-        expect(@buyer_information.errors.full_messages).to include("Phone number can't be blank")
+        expect(@buyer_information.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
         end
 
-    end
+        it "電話番号に数字以外入っていた場合登録できない" do
+          @buyer_information.phone_number = "あ漢ａ"
+          @buyer_information.valid?
+          expect(@buyer_information.errors.full_messages).to include("Phone number phone_numberには数字のみを使用してください")
+        end
+
+      end
   end
 end
 

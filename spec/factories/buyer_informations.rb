@@ -4,7 +4,7 @@ FactoryBot.define do
     shipping_area_id{2}
     municipalities{2}
     address{2}
-    phone_number{'090-1234-5678'}
+    phone_number{'09012345678'}
     item_id {2}
     token {2}
  end

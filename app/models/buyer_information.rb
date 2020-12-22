@@ -4,10 +4,11 @@ class BuyerInformation
 
 
   with_options presence: true do
-    validates :shipping_area_id
+    validates :shipping_area_id,numericality: { greater_than_or_equal_to: 2,less_than_or_equal_to: 48 }
     validates :municipalities
     validates :address
-    validates :phone_number
+    validates :phone_number,format:{ with:/\A[0-9]+\z/, message:'phone_numberには数字のみを使用してください' }
+    validates :phone_number,length: { maximum: 11 }
     validates :user_id
     validates :item_id
     validates :token

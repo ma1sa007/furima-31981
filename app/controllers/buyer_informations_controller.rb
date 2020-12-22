@@ -7,12 +7,9 @@ class BuyerInformationsController < ApplicationController
       redirect_to new_user_session_path
     end
 
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id  || @item.purchase_information.present?
       redirect_to root_path
-    end
-    if @item.purchase_information.present?
-      redirect_to root_path
-    end
+    end 
 
     @item_buyer = BuyerInformation.new
   end
@@ -32,7 +29,7 @@ class BuyerInformationsController < ApplicationController
   private
 
   def item_params
-    params.permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address, :user, :item_id,:token).merge(user_id: current_user.id)
+    params.permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address, :item_id,:token).merge(user_id: current_user.id)
   end
 
   def set_item
