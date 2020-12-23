@@ -16,7 +16,6 @@ class BuyerInformationsController < ApplicationController
 
 
   def create
-    # binding.pry
     @item_buyer = BuyerInformation.new(item_params)
         if @item_buyer.valid?
           pay_item
