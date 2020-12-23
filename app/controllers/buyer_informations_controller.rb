@@ -16,6 +16,7 @@ class BuyerInformationsController < ApplicationController
 
 
   def create
+    # binding.pry
     @item_buyer = BuyerInformation.new(item_params)
         if @item_buyer.valid?
           pay_item
@@ -29,7 +30,7 @@ class BuyerInformationsController < ApplicationController
   private
 
   def item_params
-    params.permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address, :item_id,:token).merge(user_id: current_user.id)
+    params.require(:buyer_information).permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address, :token).merge(user_id: current_user.id, token: :token, item_id: params[:item_id])
   end
 
   def set_item
