@@ -33,8 +33,11 @@ class ItemsController < ApplicationController
         if current_user != @item.user
          redirect_to item_path
         end
-          @item.update
+          if @item.update(item_params)
          redirect_to root_path
+          else
+         render :edit
+        end  
       end
 
       def destroy
