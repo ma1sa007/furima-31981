@@ -3,9 +3,6 @@ class BuyerInformationsController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    # unless user_signed_in?
-    #   redirect_to new_user_session_path
-    # end
 
     if current_user.id == @item.user_id  || @item.purchase_information.present?
       redirect_to root_path
