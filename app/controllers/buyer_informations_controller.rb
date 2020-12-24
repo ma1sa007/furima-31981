@@ -29,7 +29,7 @@ class BuyerInformationsController < ApplicationController
   private
 
   def item_params
-    params.require(:buyer_information).permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address, :token).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:buyer_information).permit(:postal_code, :shipping_area_id, :municipalities, :building_name, :phone_number, :address ).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
   def set_item
